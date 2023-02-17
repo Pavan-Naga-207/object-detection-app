@@ -8,6 +8,8 @@ from tensorflow.python.saved_model import tag_constants
 from PIL import Image
 import cv2
 import numpy as np
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from tensorflow.compat.v1 import ConfigProto
 from tensorflow.compat.v1 import InteractiveSession
 
