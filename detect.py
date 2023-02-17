@@ -1,3 +1,5 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 physical_devices = tf.config.experimental.list_physical_devices('CPU')
 from absl import app, flags, logging
@@ -8,10 +10,8 @@ from tensorflow.python.saved_model import tag_constants
 from PIL import Image
 import cv2
 import numpy as np
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
+
+
 
 flags.DEFINE_string('framework', 'tf', '(tf, tflite, trt')
 flags.DEFINE_string('weights', './checkpoints/yolov4-416',
@@ -25,8 +25,6 @@ flags.DEFINE_float('iou', 0.45, 'iou threshold')
 flags.DEFINE_float('score', 0.25, 'score threshold')
 
 def detect(original_image):
-    config = ConfigProto()
-    session = InteractiveSession(config=config)
     input_size = 416
     original_image=cv2.imread(original_image)
     original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)

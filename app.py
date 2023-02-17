@@ -8,6 +8,7 @@ import sys
 from subprocess import call
 from detect import detect
 
+
 def run_cmd(command):
         try:
             call(command, shell=True)
