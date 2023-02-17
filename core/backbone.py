@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # coding=utf-8
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 import core.common as common
 

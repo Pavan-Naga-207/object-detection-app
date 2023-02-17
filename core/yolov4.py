@@ -2,6 +2,8 @@
 # coding=utf-8
 
 import numpy as np
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 import core.utils as utils
 import core.common as common
