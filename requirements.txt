@@ -7,4 +7,4 @@ easydict
 matplotlib
 pillow
 flask
-os-sys
+
