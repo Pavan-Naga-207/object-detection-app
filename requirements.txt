@@ -1,7 +1,7 @@
 opencv-python
 lxml
 tqdm
-tensorflow
+tensorflow-cpu
 absl-py
 easydict
 matplotlib
